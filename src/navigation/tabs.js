@@ -4,7 +4,7 @@
  * React Native Starter App
  * https://github.com/mcnamee/react-native-starter-app
  */
-import React from 'react';
+import React, { Component } from 'react';
 import { Scene } from 'react-native-router-flux';
 
 // Consts and Libs
@@ -21,6 +21,7 @@ import Error from '@components/general/Error';
 import StyleGuide from '@containers/StyleGuideView';
 import Recipes from '@containers/recipes/Browse/BrowseContainer';
 import RecipeView from '@containers/recipes/RecipeView';
+import MapStyle from '@containers/geo/MapStyle';
 
 const navbarPropsTabs = {
   ...AppConfig.navbarProps,
@@ -57,21 +58,12 @@ const scenes = (
     </Scene>
 
     <Scene
-      key={'timeline'}
+      key={'location'}
       {...navbarPropsTabs}
-      title={'Coming Soon'}
-      component={Placeholder}
-      icon={props => TabIcon({ ...props, icon: 'timeline' })}
-      analyticsDesc={'Placeholder: Coming Soon'}
-    />
-
-    <Scene
-      key={'error'}
-      {...navbarPropsTabs}
-      title={'Example Error'}
-      component={Error}
-      icon={props => TabIcon({ ...props, icon: 'error' })}
-      analyticsDesc={'Error: Example Error'}
+      title={'Map'}
+      component={MapStyle}
+      icon={props => TabIcon({ ...props, icon: 'map' })}
+      analyticsDesc={'Map: Sample'}
     />
 
     <Scene
