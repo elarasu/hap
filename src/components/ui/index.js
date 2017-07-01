@@ -17,4 +17,6 @@ import FormInput from './FormInput';
 import FormLabel from './FormLabel';
 import FormValidationMessage from './FormValidationMessage';
 
-export { Alerts, Button, Card, Spacer, TabIcon, Text, List, ListItem, FormInput, FormLabel, FormValidationMessage };
+export { Alerts, Button, Card, Spacer, TabIcon, Text, List, ListItem, FormInput,
+    FormLabel, FormValidationMessage,
+};

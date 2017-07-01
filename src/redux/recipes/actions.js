@@ -1,8 +1,5 @@
 /**
  * Recipe Actions
- *
- * React Native Starter App
- * https://github.com/mcnamee/react-native-starter-app
  */
 import { Firebase, FirebaseRef } from '@constants/';
 
@@ -49,8 +46,8 @@ export function replaceFavourites(newFavourites) {
   * Get Meals
   */
 export function getMeals() {
-  return (dispatch) => {
-    return new Firebase.Promise((resolve) => {
+  return dispatch =>
+    new Firebase.Promise((resolve) => {
       const ref = FirebaseRef.child('meals');
 
       return ref.once('value').then((snapshot) => {
@@ -62,25 +59,22 @@ export function getMeals() {
         }));
       });
     });
-  };
 }
 
 /**
   * Get Recipes
   */
 export function getRecipes() {
-  return (dispatch) => {
-    return new Firebase.Promise((resolve) => {
-      const ref = FirebaseRef.child('recipes');
+  return dispatch => new Firebase.Promise((resolve) => {
+    const ref = FirebaseRef.child('recipes');
 
-      return ref.on('value', (snapshot) => {
-        const recipes = snapshot.val() || {};
+    return ref.on('value', (snapshot) => {
+      const recipes = snapshot.val() || {};
 
-        return resolve(dispatch({
-          type: 'RECIPES_REPLACE',
-          data: recipes,
-        }));
-      });
+      return resolve(dispatch({
+        type: 'RECIPES_REPLACE',
+        data: recipes,
+      }));
     });
-  };
+  });
 }

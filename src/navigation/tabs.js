@@ -4,7 +4,7 @@
  * React Native Starter App
  * https://github.com/mcnamee/react-native-starter-app
  */
-import React, { Component } from 'react';
+import React from 'react';
 import { Scene } from 'react-native-router-flux';
 
 // Consts and Libs
@@ -16,8 +16,6 @@ import { TabIcon } from '@ui/';
 import { NavbarMenuButton } from '@containers/ui/NavbarMenuButton/NavbarMenuButtonContainer';
 
 // Scenes
-import Placeholder from '@components/general/Placeholder';
-import Error from '@components/general/Error';
 import StyleGuide from '@containers/StyleGuideView';
 import Recipes from '@containers/recipes/Browse/BrowseContainer';
 import RecipeView from '@containers/recipes/RecipeView';
